@@ -8,8 +8,9 @@
 </h:head>
 	<h:body>
 		<h:form>
+			<h:messages layout="table" />
 			Nome: <h:inputText value="#{pessoaController.pessoa.nome}"  />
-			CPF: <h:inputText value="#{pessoaController.pessoa.cpf}" />
+			CPF: <h:inputText value="#{pessoaController.pessoa.cpf}" converter="converter.cpf" validator="validator.cpf"/>
 			<h:commandButton value="+" action="#{pessoaController.salvar}" />
 			<h:commandButton value="¬" action="#{pessoaController.editar}" />
 		</h:form>
@@ -19,7 +20,7 @@
 					<h:outputLabel value="#{pessoa.nome}" />
 				</h:column>
 				<h:column>
-					<h:outputLabel value="#{pessoa.cpf}" />
+					<h:outputLabel value="#{pessoa.cpf.formatado()}" />
 				</h:column>
 				<h:column>
 					<h:commandButton value=">" action="#{pessoaController.selecionar(pessoa)}" />
