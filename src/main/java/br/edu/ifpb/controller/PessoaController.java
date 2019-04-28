@@ -29,7 +29,6 @@ public class PessoaController implements Serializable{
 	
 	public String selecionar(Pessoa pessoa) {
 		this.pessoa = pessoa;
-		System.out.println(this.pessoa);
 		return null;
 	}
 	
